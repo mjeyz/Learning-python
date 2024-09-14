@@ -226,7 +226,7 @@ int main()
     {
         cout << "Invalid role specified. Please enter either 'employee' or 'student'." << endl;
     }
-
+system("pause");
     return 0;
 }
 
