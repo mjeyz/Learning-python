@@ -8,15 +8,12 @@ void printNumbers(int start, int end) {
     }
 }
 
-// Main function
 int main() {
-    // Create two threads
-    std::thread t1(printNumbers, 1, 5);  // First thread prints numbers from 1 to 5
-    std::thread t2(printNumbers, 6, 10); // Second thread prints numbers from 6 to 10
+    std::thread t1(printNumbers, 1, 5);  
+    std::thread t2(printNumbers, 6, 10); 
 
-    // Wait for both threads to complete their execution
-    t1.join();  // Join thread t1 back to the main thread
-    t2.join();  // Join thread t2 back to the main thread
+    t1.join(); 
+    t2.join(); 
 
     std::cout << "Both threads have finished executing." << std::endl;
 
