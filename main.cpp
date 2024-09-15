@@ -1,21 +1,22 @@
-#include <iostream>
-#include <thread>
+#include<iostream>
+#include<thread>
+using namespace std;
 
-// Function to be executed by a thread
-void printNumbers(int start, int end) {
-    for (int i = start; i <= end; ++i) {
-        std::cout << "Thread ID: " << std::this_thread::get_id() << " - Number: " << i << std::endl;
-    }
+void firstNumber() {
+	for (int i = 1; i < 200; i++)
+	{
+		cout << "+";
+	}
+}
+void secondNumber() {
+	for (int i = 1; i <= 200; i++) 
+	{
+		cout << "-";
+	}
 }
 
 int main() {
-    std::thread t1(printNumbers, 1, 5);  
-    std::thread t2(printNumbers, 6, 10); 
-
-    t1.join(); 
-    t2.join(); 
-
-    std::cout << "Both threads have finished executing." << std::endl;
-
-    return 0;
+	thread t1(firstNumber);
+	thread t2(secondNumber);
+	return 0;
 }
